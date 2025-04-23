@@ -20,6 +20,9 @@ io.on("connection", (socket) => {
   socket.on("unchecked", (data) => {
     socket.broadcast.emit('unchecked_receive', data)
   })
+  socket.on("delete", (data) => {
+    socket.broadcast.emit('delete_receive', data)
+  })
 });
 
 server.listen(port, () => {
