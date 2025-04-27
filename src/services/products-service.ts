@@ -3,6 +3,7 @@ import {
   getAllProducts,
   deleteProductById,
   createProduct,
+  updateProduct,
 } from "../repo/products-repository.ts";
 
 export const getAllProductsService = async () => {
@@ -33,11 +34,23 @@ export const deleteProductByIdService = async (id: string) => {
 
 export const createProductService = async (product: ProductModel) => {
   let status = 0;
-  let data; 
+  let data;
 
   if (Object.keys(product).length !== 0) {
     data = await createProduct(product);
     status = 201;
+  } else {
+    status = 400;
+  }
+  return { data, status };
+};
+
+export const updateProductService = async (id: string) => {
+  let status = 0;
+  let data = await updateProduct(id);
+
+  if (data) {
+    status = 200;
   } else {
     status = 400;
   }

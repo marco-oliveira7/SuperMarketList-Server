@@ -22,6 +22,9 @@ io.on("connection", (socket) => {
   })
   socket.on("delete", (data) => {
     socket.broadcast.emit('delete_receive', data)
+  })  
+  socket.on("create", () => {
+    socket.broadcast.emit('create_receive')
   })
 });
 
