@@ -3,7 +3,7 @@ import http from "http";
 import createApp from "./app.js"
 
 const app = createApp()
-const port = process.env.PORT;
+const port = process.env.PORT || 1000;
 const server = http.createServer(app);
 
 const io = new Server(server, {
