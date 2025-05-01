@@ -5,7 +5,7 @@ const router = Router();
 
 router.get("/products", getAllProducts);
 router.delete("/products/:id", deleteProductById)
-router.post("/products/", createProduct)
+router.post("/products", createProduct)
 router.patch("/products/:id", updateProduct)
 
 export default router
