@@ -41,10 +41,8 @@ export const deleteProductById = async (id: string) => {
       // logica para deletar produtos do meio do array
       database?.slice(index).forEach((product) => {
         let id = parseInt(product.id);
-        console.log(product)
         id--;
         product.id = id.toString();
-        console.log(product)
       });
     }
     database.splice(index, 1);
@@ -73,9 +71,9 @@ export const updateProduct = async (id: string): Promise<string> => {
     if (checkedProduct.isChecked === true) checkedProduct.isChecked = false;
     else checkedProduct.isChecked = true;
 
-    message = "Sucesso";
+    message = "Sucessfull";
   } else {
-    message = "O id fornecido não é válido";
+    message = "The given id is not valid";
   }
   return message;
 };

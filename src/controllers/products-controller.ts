@@ -1,3 +1,4 @@
+import { ProductModel } from "../model/product-model.js";
 import {
   getAllProductsService,
   deleteProductByIdService,
@@ -20,7 +21,7 @@ export const deleteProductById = async (req: Request, res: Response) => {
 };
 
 export const createProduct = async (req: Request, res: Response) => {
-  const body = req.body;
+  const body : ProductModel = req.body;
   const { data, status } = await createProductService(body);
 
   res.status(status).json(data);
