@@ -1,10 +1,10 @@
-import { ProductModel } from "../model/product-model.ts";
+import { ProductModel } from "../model/product-model";
 import {
   getAllProducts,
   deleteProductById,
   createProduct,
   updateProduct,
-} from "../repo/products-repository.ts";
+} from "../repo/products-repository";
 
 export const getAllProductsService = async () => {
   const data = await getAllProducts();
@@ -26,7 +26,7 @@ export const deleteProductByIdService = async (id: string) => {
   if (data) {
     status = 200;
   } else {
-    status = 204;
+    status = 400;
   }
 
   return { data, status };
