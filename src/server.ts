@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://market-list-neon.vercel.app",
+    origin: "*",
     methods: ["GET", "POST", "DELETE", "PATCH"],
   },
 });
